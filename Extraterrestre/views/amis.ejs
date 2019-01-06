@@ -1,0 +1,64 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Carnet d'adresse</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+   <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+</head>
+<body>
+ <center><h1 style="color:black" > Salut à toi ami extraterrestre! </h1></center>
+  <div class="container">
+  
+    <!-- Barre de navigation -->
+    <nav class="navbar navbar-default">
+
+      <div class="container-fluid">
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/home/accueil">Accueil</a></li>
+          </ul>
+		  <ul class="nav navbar-nav">
+            <li class="active"><a href="/home/amis">Liste d'amis</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/home/logout">Déconnexion</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+	
+	<!-- Test si le membre à des amis -->
+	
+	<!-- Si non, alors affichage d'un texte -->
+	<% if (data[0] == undefined) { %>
+		<div class="jumbotron">
+			<h2>Vous n'avez pas d'amis!</h2>
+		</div>
+    <% }else{  %>
+	
+	<!-- Si oui, affichage de la liste des amis  -->
+      <div class="jumbotron">
+        <h2>Vos amis :</h2> </br>       
+        <h3 class="panel-title">
+		<form class="form-horizontal" role="form" action="/supprimer">
+			<table class="table table-user-information">
+				<% for(var i=0; i< data.length; i++){ %> <tr>  <td name="id"><%=data[i].login%>  </td>
+					<div class="col-md-offset-3 col-md-9">
+					<td> <a class="btn btn-info" > Contacter</a></td> 
+						<td> <a class="btn btn-danger" href="/supprimer?id='<%=data[i].id%>' ">Supprimer</a>   </td>                                  
+					</div>
+			
+					</tr>
+					</br></br><% } %></h3>
+			</table>	
+		</form>
+	<% } %>	
+	  
+	 <!-- Appel de la page d'ajout d'amis -->
+		<form method="get" action="/home/ajout">
+			<button type="submit" class="btn btn-succes" >Ajoutez un ami</button>
+		</form
+	 
+     </div>
+  </body>
+</html>

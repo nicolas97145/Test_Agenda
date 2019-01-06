@@ -1,0 +1,107 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Carnet d'adresse</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+   <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+</head>
+<body>
+ <center><h1 style="color:black" > Salut à toi ami extraterrestre! </h1></center>
+  <div class="container">
+  
+    <!-- Barre de navigation -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/home/accueil">Accueil</a></li>
+          </ul>
+		  <ul class="nav navbar-nav">
+            <li ><a href="/home/amis">Liste d'amis</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/home/logout">Déconnexion</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+   
+   <!-- Liste des informations -->
+   
+      <div class="jumbotron">
+	  <h1> Vos informations:</h1>
+	  </br></br>		
+        <table class="table table-user-information">
+                <tbody>
+                  <tr>
+                    <td>Login:</td>
+                    <td><%=data[0].login%></td>
+                  </tr>
+				  <tr>
+                    <td>Age:</td>
+                    <td><%=data[0].age%></td>
+                  </tr>
+				  <tr>
+                    <td>Famille:</td>
+                    <td><%=data[0].famille%></td>
+                  </tr>
+				  <tr>
+                    <td>Race:</td>
+                    <td><%=data[0].race%></td>
+                  </tr>
+                  <tr>
+                    <td>Nourriture:</td>
+                    <td><%=data[0].nourriture%></td>
+                  </tr>
+                </tbody>
+        </table>
+		</br></br>		
+		<h1> Modifiez vos informations: </h1>
+		</br></br>
+		
+		<!-- Modification des informations via la fonction de modification -->
+		<form class="form-horizontal" role="form" method="post" action="/modification" onSubmit="return checkblank(this);">
+                              
+            <div class="form-group">
+                <label for="login" class="col-md-3 control-label">Login</label>
+                <div class="col-md-9">
+                    <input type="text" class="form-control" name="login" value="<%=data[0].login%>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="age" class="col-md-3 control-label">Age</label>
+                <div class="col-md-9">
+                    <input type="number" class="form-control" name="age" value="<%=data[0].age%>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="famille" class="col-md-3 control-label">Famille</label>
+                <div class="col-md-9">
+                    <input type="text" class="form-control" name="famille" value="<%=data[0].famille%>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="race" class="col-md-3 control-label">Race</label>
+                <div class="col-md-9">
+                    <input type="text" class="form-control" name="race" value="<%=data[0].race%>">
+                </div>
+            </div>
+			<div class="form-group">
+                <label for="nourriture" class="col-md-3 control-label">Nourriture</label>
+				<div class="col-md-9">
+					<input type="text" class="form-control" name="nourriture" value="<%=data[0].nourriture%>">
+				</div>
+            </div>
+ 
+           <div class="form-group">                                                              
+				<div class="col-md-offset-3 col-md-9">
+					<button id="btn-signup" type="submit" class="btn btn-info"><i class="icon-hand-right"></i> Modifier</button>
+                </div>
+            </div>
+                               
+        </form>
+                         
+	  
+    </div>
+  </body>
+</html>

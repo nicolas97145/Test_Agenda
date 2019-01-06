@@ -1,0 +1,53 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Carnet d'adresse</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+   <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+</head>
+<body>
+ <center><h1 style="color:black" > Salut à toi ami extraterrestre! </h1></center>
+  <div class="container">
+    <!-- Barre de navigation -->
+    <nav class="navbar navbar-default">
+
+      <div class="container-fluid">
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/home/accueil">Accueil</a></li>
+          </ul>
+		  <ul class="nav navbar-nav">
+            <li class="active"><a href="/home/amis">Liste d'amis</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/home/logout">Déconnexion</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+	
+	<!-- Zone de saisie du membre recherché -->
+	
+	  <div class="jumbotron">
+		<% if (message.length > 0) { %>
+			<div class="alert alert-danger col-sm-12"><%= message %></div>
+		<% } %>
+		<h2> Ajoutez des amis </h2> 
+		</br>
+		 <form class="form-horizontal" role="form" method="post" action="/ajouter";">
+			<div class="form-group">
+
+                <div class="col-md-9">
+                    <input type="text" class="form-control" name="nameExtra" placeholder="Nom de l'ami à ajouter">
+                </div>
+            </div>
+		
+			<button type="submit" class="btn btn-info">Ajouter</button>
+            
+                               
+		</form>
+	 </div>
+	  
+	</div>
+  </body>
+</html>

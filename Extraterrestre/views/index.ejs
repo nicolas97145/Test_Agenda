@@ -1,0 +1,56 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Carnet d'adresse</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+   
+</head>
+<body>
+        <div class="container">   
+        <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">    
+            <div class="panel panel-info" >
+                    <div class="panel-heading">
+						<h1>Bienvenu sur le carnet d'adresse le plus coté chez les extraterrestres!</h1>		
+                        <div class="panel-title">Connexion</div>
+						<a href="/signup">Inscription</a>
+                    </div>    
+ 
+					<!-- Zones de saisie des informations pour la connexion --> 
+                    <div style="padding-top:30px" class="panel-body" >
+                        <% if (message.length > 0) { %>
+                            <div class="alert alert-danger col-sm-12"><%= message %></div>
+                        <% } %>
+                           
+                        <form id="loginform" class="form-horizontal" role="form" method="post" action="/login">
+                                   
+                            <div style="margin-bottom: 25px" class="input-group">
+                                       
+                                        <input id="login-username" type="text" class="form-control" name="login" value="" placeholder="Login">                                       
+                                    </div>
+                               
+                            <div style="margin-bottom: 25px" class="input-group">
+                                      
+                                        <input id="login-password" type="password" class="form-control" name="mdp" placeholder="Mot de passe">
+                                    </div>
+ 
+ 
+                                <div style="margin-top:10px" class="form-group">
+                                   
+ 
+                                    <div class="col-sm-12 controls">
+                                      <button id="btn-login" type="submit" class="btn btn-success">Connexion </button>
+                                     
+ 
+                                    </div>
+                                </div>  
+                            </form>    
+ 
+ 
+ 
+                        </div>                    
+                    </div> 
+        </div>
+       
+    </div>
+</body>
+</html>
